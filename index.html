@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header-inner">
+        <h1><span class="sub-title">自家製パン工房</span>ブレッドハウス</h1>
+        <nav>
+            <ul>
+                <li class="border-style">PICKUP</li>
+                <li class="border-style">MENU</li>
+                <li class="border-style">CONTACT</li>
+                <li class="sns-area-top">Twitter</li>
+                <li>facebook</li>
+                <li>instagram</li>
+            </ul>
+        </nav>
+        <button class="toggle_btn">
+            <span></span>
+        </button>
+        <div id="mask"></div>
+    </header>
+    <div class="main-visulal">
+        <video id="video" poster="img/flour.mp4" webkit-playsinline playsinline muted autoplay loop>
+            <!--
+            poster：動画ファイルが利用できない環境で代替表示される画像
+            webkit-playsinline：iOS 9までのSafari用インライン再生指定
+            playsinline：iOS 10以降のSafari用インライン再生指定
+            muted：音声をミュートさせる
+            autoplay：動画を自動再生させる
+            loop：動画をループさせる
+            controls：コントロールバーを表示する
+            -->
+            <source src="img/flour.mp4" type="video/mp4">
+            <p>動画を再生できる環境ではありません。</p>
+        </video>
+        <div class="copy">
+            <p>国産小麦にこだわった、<br>外はカリっと中はもちっとしたパンを提供しています。</p>
+        </div>
+    </div>
+    <main role="main">
+        <section class="pickup">
+            <h2>PICK UP</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pickup-item">
+                        <img src="img/01s.jpg" alt="*">
+                        <p>今月のおススメ：フランスパン<br>
+                            オーソドックスな商品ながらも、<br>
+                            当店は香りにこだわっています。<br>
+                            多くの空気をふくませているので、食感も楽しめる逸品です。</p>
+                    </div>
+                    <div class="swiper-slide pickup-item">
+                        <img src="img/02s.jpg" alt="*">
+                        <p>新作：ハード食パン<br>
+                            お客様の要望から新商品が誕生！<br>
+                            フランスパンほど固くなく、食パンに似た<br>
+                            新食感のパンを是非ご堪能ください。</p>
+                    </div>
+                    <div class="swiper-slide pickup-item">
+                        <img src="img/03s.jpg" alt="*">
+                        <p>新作：メロンパン<br>
+                            大人気商品をリニューアル。<br>
+                            お客様の要望に答えて、ボリュームを増加。<br>
+                            価格を据え置きにしたアップデート商品です</p>
+                    </div>
+                    <div class="swiper-slide pickup-item">
+                        <img src="img/01s.jpg" alt="*">
+                        <p>今月のおススメ：フランスパン<br>
+                            オーソドックスな商品ながらも、<br>
+                            当店は香りにこだわっています。<br>
+                            多くの空気をふくませているので、食感も楽しめる逸品です。</p>
+                    </div>
+                    <div class="swiper-slide pickup-item">
+                        <img src="img/02s.jpg" alt="*">
+                        <p>新作：ハード食パン<br>
+                            お客様の要望から新商品が誕生！<br>
+                            フランスパンほど固くなく、食パンに似た<br>
+                            新食感のパンを是非ご堪能ください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feature">
+            <h2>MENU</h2>
+            <div class="common-inner">
+                <div class="feature-item__wrap">
+                    <div class="item">
+                        <img src="img/01.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">タマゴパン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/02.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">焼きそばパン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/03.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">マリトッツォ</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/04.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">ウインナー</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/05.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">フォカッチャ</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/06.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">ベーコンチーズ</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/07.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">ピザ</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/08.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">抹茶パン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/09.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">カツサンド</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/10.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">クロワッサン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/11.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">食パン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/12.jpg" alt="dummy">
+                        <div class="item-bottom">
+                            <span class="category">くるみパン</span>
+                            
+                            <span class="date">￥300</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="map_wrap">
+            <h2>MAP</h2>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3241.0207472669017!2d139.7690877152587!3d35.67649113019553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5p2x5Lqs6YO95Lit5aSu5Yy65Lit5aSuMS0xMS0yMg!5e0!3m2!1sja!2sjp!4v1636598231344!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <h2>CONTACT</h2>
+        <div class="common-inner">
+            <div class="contact-wrap">
+                <div class="contact-inner">
+                    <p>〒104-0044<br>
+                    東京都中央区中央1-11-22中央テラス1F<br>
+                        TEL0000-00-000</p>
+                    <p>駐車場なし<br>
+                        営業時間 <br>
+                        8:00-20:00（平日）<br>
+                        8:00-21:00（土日祝）<br>
+                    </p>
+                </div>
+                <div class="contact-inner">
+                    <div class="form_parts">
+                        <label for="">Name:</label><br>
+                        <input type="text">
+                    </div>
+                    <div class="form_parts">
+                        <label for="">Mail:</label><br>
+                        <input type="email">
+                    </div>
+                    <div class="form_parts">
+                        <label for="">Message:</label><br>
+                        <input class="high-line" type="textarea">
+                    </div>
+                    <div class="form_parts">
+                        <button class="send-button" type="submit">SEND</button>
+                        <form action=""></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+        <small>© 自家製パン工房ブレッドハウス </small>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

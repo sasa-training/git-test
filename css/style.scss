@@ -1,0 +1,359 @@
+@charset "utf-8";
+
+$pc: 1200px;  // sp
+$tab: 800px;  // タブレット
+$sp: 560px;  // sp
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+      @content;
+    }
+  }
+  @mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+  }
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  } 
+
+body{
+    font-size: 14.4px;
+    color: #121212;
+    line-height: 1.7;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+}
+
+.common-inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    @include pc {
+        padding: 0 16px;
+    }
+}
+
+header{
+    position: fixed;
+    z-index: 9;
+    background-color: #FFF;
+    .sub-title{
+        font-size: 0.5rem;
+    }
+    &.header-inner{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: center;
+        .toggle_btn{
+            position: relative;
+            width: 30px;
+            height: 20px;
+            transition: .7s;
+            z-index: 10000;
+            span{
+                position: absolute;
+                background: #121212;
+                height: 2px;
+                width: 30px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                transition: all .5s;
+                &::before{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background: #121212;
+                    height: 2px;
+                    width: 30px;
+                    top: -10px;
+                    left: 0;
+                }
+                &::after{
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    background: #121212;
+                    height: 2px;
+                    width: 30px;
+                    bottom: -10px;
+                    left: 0;
+                }
+            }
+            &.open {
+                span{
+                    background: rgba(12,12,12,0);
+                    &::before{
+                        background: #FFF;
+                        top: 0px;
+                        transform: rotate(-315deg);
+                    }
+                    &::after{
+                        background: #FFF;
+                        top: 0px;
+                        transform: rotate(315deg);
+                    }
+                }
+            }
+        }
+        nav{
+            position: fixed;
+            top:0;
+            left: -100%;
+            padding: 60px 25px 0;
+            height: 100%;
+            width: 300px;
+            transition: all .7s, opacity .3s;
+            ul {
+                li {
+                    padding: 5px 0;
+                    &.border-style {
+                        padding: 20px 0;
+                        border-bottom: 1px solid #FFF;
+                        &:first-child{
+                            border-top: 1px solid #FFF;
+                        }
+                    }
+                    &.sns-area-top{
+                        margin-top: 50px;
+                    }
+                }
+            }
+            &.open { 
+                z-index: 100;
+                left: 0;
+                background: rgba(12,12,12,1);
+                color: #FFF;
+            }
+        }
+        #mask{
+            display: none;
+            transition: all .5s;
+            &.open{
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: .5;
+                z-index: 10;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+.main-visulal{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+}
+.copy{
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    z-index: 10000;
+    p{
+        font-size: 1.5rem;
+        padding: 15px;
+        color: #FFF;
+    }
+}
+
+section{
+    margin: 100px auto 0;
+    width: 100%;
+    h2{
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    &.pickup{
+        .swiper{
+            margin-top: 30px;
+        }
+        .pickup-item{
+            img{
+                position: relative;
+            }
+            p{
+                position: absolute;
+                height: auto;
+                width: 100%;
+                font-size: 0.7rem;
+                bottom: 0;
+                left: 0;
+                padding: 5px;
+                background: #FFF;
+                opacity: .8;
+                &:hover{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.feature-item__wrap{
+    margin: 30px 0 -26px -26px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .item{
+        margin: 0 0 26px 26px;
+        width: calc( 100% / 3 - 26px);
+        height: auto;
+        box-shadow: 0 0 8px 0px#CCCCCC;
+        opacity: 0;
+        @include tab {
+            width: calc( 100% / 2 - 26px);
+        }
+        @include sp {
+            width: 100%;
+        }
+        &-bottom{
+            padding: 26px 35px;
+            height: auto;
+            .category{
+                font-size: 12px;
+            }
+            .title{
+                margin-top: 20px;
+            }
+            .date{
+                display: block;
+                text-align: right;
+                margin-top: 33px;
+            }
+        }
+    }
+}
+
+@mixin animationValue( $name, $duration, $function, $delay, $count, $state){
+    -webkit-animation: $name $duration+s $function $delay+s $count $state;
+    animation: $name $duration+s $function $delay+s $count $state;
+}
+// ↓through の後の数字を子要素の数字にすることで
+// ↓{}（ブレース）内の処理をその回数分繰り返します。
+@for $cnt from 1 through 12{
+    // ↓nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にします
+    .start > .item:nth-child(#{$cnt}){
+        // ↓ include で animation プロパティを定義した mixin を呼び出す。
+        // ↓現在のカウント数（$cnt）に少数値をかけた値を $delay 
+        // ↓に指定することで時間差をつけることができる
+        @include animationValue(example, 0.5, ease, $cnt * 0.5 , 1, forwards);
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content; 
+    }
+    @keyframes #{$name} {
+      @content;
+    } 
+}
+
+@include keyframes(example) {
+    100% {
+        opacity: 1;
+    }
+}
+
+.map_wrap{
+    padding-top: 50px;
+    background: #121212;
+    color: #FFF;
+}
+.map {
+    margin-top: 30px;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+}
+.map iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+footer {
+    background: #121212;
+    color: #FFF;
+    h2 {
+        padding-top: 50px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .contact{
+        &-wrap{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &-inner{
+            margin-top: 30px;
+            width: calc( 50% - 60px );
+            @include tab {
+                width: calc( 100% );
+            }
+            p+p{
+                margin-top: 30px;
+            }
+            .form_parts{
+                input{
+                    width: 100%;
+                    background:#FFF;
+                    border: 1px solid #707070;
+                    line-height: 42px;
+                }
+                &:not(:first-child){
+                    margin-top: 22px;
+                }
+                .high-line{
+                    height: 66px;
+                }
+                .send-button{
+                    border: 1px solid #FFF;
+                    color: #FFF;
+                    width: 200px;
+                    height: 45px;
+                    text-align: center;
+                    @include tab {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        margin-top: 60px;
+        text-align: center;
+    }
+}
