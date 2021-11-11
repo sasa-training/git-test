@@ -327,17 +327,33 @@ footer {
                 margin-top: 30px;
             }
             .form_parts{
+                margin-top: 22px;
+                &:first-child{
+                    margin-top: 0;
+                }
                 input{
                     width: 100%;
                     background:#FFF;
                     border: 1px solid #707070;
-                    line-height: 42px;
+                    height: 42px;
+                    &:focus {
+                        border: 3px solid #ff9900;
+                        outline: 0;
+                        color: #000;
+                    }
                 }
-                &:not(:first-child){
-                    margin-top: 22px;
-                }
-                .high-line{
+                textarea{
+                    width: 100%;
+                    background:#FFF;
+                    border: 1px solid #707070;
                     height: 66px;
+                    width: 100%;
+                    white-space: pre-wrap;
+                    &:focus{
+                        border: 3px solid #ff9900;
+                        outline: 0;
+                        color: #000;
+                    }
                 }
                 .send-button{
                     border: 1px solid #FFF;
